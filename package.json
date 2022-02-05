@@ -1,6 +1,6 @@
 {
   "name": "contribution-tracker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React component for GitHub-like contribution tracker. (Fork of haripo/react-github-contribution-calendar)",
   "main": "./lib/index.js",
   "scripts": {
