@@ -95,6 +95,7 @@ import Calendar from "./../lib/index.js";
       panelAttributes={panelAttributes}
       weekLabelAttributes={weekLabelAttributes}
       monthLabelAttributes={monthLabelAttributes}
+      hoverText={(c) => `${c} contributions`}
     />,
     elem
   );

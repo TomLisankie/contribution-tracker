@@ -12,6 +12,7 @@ interface Props {
   weekLabelAttributes: any | undefined;
   monthLabelAttributes: any | undefined;
   panelAttributes: any | undefined;
+  hoverText: (contributions: number) => string;
 }
 
 interface State {
@@ -79,6 +80,7 @@ export default class GitHubCalendar extends React.Component<Props, State> {
     const columns = this.state.columns;
     const values = this.props.values;
     const until = this.props.until;
+    const hoverText = this.props.hoverText;
 
     var contributions = this.makeCalendarData(values, until, columns);
     var innerDom: ReactElement[] = [];
@@ -103,7 +105,9 @@ export default class GitHubCalendar extends React.Component<Props, State> {
             height={this.panelSize}
             fill={color}
             {...this.props.panelAttributes}
-          />
+          >
+            <title>{hoverText(contribution.value)}</title>
+          </rect>
         );
         innerDom.push(dom);
       }
